@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atendimento SUS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    h1 {
+      color: #0033cc;
+    }
+
+    img {
+      width: 300px;
+      border-radius: 10px;
+    }
+
+    select {
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    #mensagem {
+      margin-top: 20px;
+      font-weight: bold;
+      color: red;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Troque o link abaixo pela imagem que você quiser -->
+  <img src="https://i.postimg.cc/HnvjzrXx/SUS-20251022-182154-0000.png" alt="SUS"><br><br>
+
+  <h1>Atendimento SUS</h1>
+  <p>Selecione seu sintoma:</p>
+
+  <select id="sintomas">
+    <option value="">-- Escolha --</option>
+    <option>Dor de cabeça</option>
+    <option>Tosse</option>
+    <option>Febre</option>
+    <option>Ressaca</option>
+    <option>Bicho de pé</option>
+    <option>Olho tremendo</option>
+    <option>Dor existencial</option>
+    <option>Coração partido</option>
+    <option>Vício em memes</option>
+  </select>
+
+  <p id="carregando" style="display:none;">Carregando...</p>
+  <p id="mensagem">Desculpe, um outro usuário já possui esse sintoma.</p>
+  
+  <h4>ORIGINAL DE SUS ( SISTEMA UNIVERSAL DE SINTOMA )</h4>
+  
+  <div class="card">
+      <h2>AVISO!</h2>
+      <p>NÃO LEVE O SITE A SÉRIO, ELE FOI FEITO APENAS PARA A DIVERSÃO E ENTRETENIMENTO!</p>
+  </div>
+
+  <script>
+    const select = document.getElementById("sintomas");
+    const carregando = document.getElementById("carregando");
+    const mensagem = document.getElementById("mensagem");
+
+    select.addEventListener("change", () => {
+      if (select.value === "") {
+        carregando.style.display = "none";
+        mensagem.style.display = "none";
+        return;
+      }
+
+      carregando.style.display = "block";
+      mensagem.style.display = "none";
+
+      setTimeout(() => {
+        carregando.style.display = "none";
+        mensagem.style.display = "block";
+      }, 1500);
+    });
+  </script>
+
+</body>
+</html>
